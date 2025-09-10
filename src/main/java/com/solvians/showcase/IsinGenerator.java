@@ -7,7 +7,7 @@ public class IsinGenerator {
     public String generateIsin() {
 
         ThreadLocalRandom random = ThreadLocalRandom.current();
-        String base = randomUpper(random) + randomUpper(random) + randomAlphaNumeric(random, 9);
+        String base = "" + randomUpper(random) + randomUpper(random) + randomAlphaNumeric(random, 9);
 
         return base + computeCheckDigit(base);
     }
