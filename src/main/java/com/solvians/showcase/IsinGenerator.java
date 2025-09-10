@@ -4,7 +4,7 @@ import java.util.concurrent.ThreadLocalRandom;
 
 public class IsinGenerator {
 
-    public String generateIsin() {
+    public static String generateIsin() {
 
         ThreadLocalRandom random = ThreadLocalRandom.current();
         String base = "" + randomUpper(random) + randomUpper(random) + randomAlphaNumeric(random, 9);
@@ -12,7 +12,7 @@ public class IsinGenerator {
         return base + computeCheckDigit(base);
     }
 
-    public int computeCheckDigit(String elevenChars) {
+    public static int computeCheckDigit(String elevenChars) {
         if (elevenChars == null || elevenChars.length() != 11) {
             throw new IllegalArgumentException("ISIN base must be exactly 11 characters");
         }
